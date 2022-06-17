@@ -26,28 +26,24 @@
 /constant
 ```
 
-##Functionality assignments
+## Functionality assignments
 ---
-###Daniel Parra
----
+
+### Daniel Parra
 -Everything about adding second player
 
-###Joseph Perez
----
+### Joseph Perez
 -Handle collitions with screen
 -Stop game
 -Boolean conditions
 
-###Jonathan Uribe (Team Leader)
----
+### Jonathan Uribe (Team Leader)
 -Handle points
 -Software testing
 
-###Thomas Villalobos
----
+### Thomas Villalobos
 -Handle player collitions and himself
 
-###Gloria Rosado
----
+### Gloria Rosado
 -Add control for multiple players
 -Readme
