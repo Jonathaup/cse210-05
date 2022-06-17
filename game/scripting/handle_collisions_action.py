@@ -36,16 +36,20 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        score = cast.get_first_actor("scores")
-        food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_head()
+        p1_bike = cast.get_first_actor("player_1")
+        p1_bike.grow_tail(1)
+        p2_bike = cast.get_first_actor("player_2")
+        p2_bike.grow_tail(1)
+        # score = cast.get_first_actor("scores")
+        # food = cast.get_first_actor("foods")
+        # p1_bike = cast.get_first_actor("player_1")
+        # head = p1_bike.get_head()
 
-        if head.get_position().equals(food.get_position()):
-            points = food.get_points()
-            snake.grow_tail(points)
-            score.add_points(points)
-            food.reset()
+        # if head.get_position().equals(food.get_position()):
+        #     points = food.get_points()
+        #     p1_bike.grow_tail(points)
+        #     score.add_points(points)
+        #     food.reset()
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -53,9 +57,9 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1:]
+        p1_bike = cast.get_first_actor("player_1")
+        head = p1_bike.get_segments()[0]
+        segments = p1_bike.get_segments()[1:]
         
         for segment in segments:
             if head.get_position().equals(segment.get_position()):
@@ -68,8 +72,8 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         if self._is_game_over:
-            snake = cast.get_first_actor("snakes")
-            segments = snake.get_segments()
+            p1_bike = cast.get_first_actor("player_1")
+            segments = p1_bike.get_segments()
             food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
@@ -83,4 +87,4 @@ class HandleCollisionsAction(Action):
 
             for segment in segments:
                 segment.set_color(constants.WHITE)
-            food.set_color(constants.WHITE)
+            #food.set_color(constants.WHITE)

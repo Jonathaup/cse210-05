@@ -1,5 +1,5 @@
 from game.scripting.action import Action
-
+from game.shared.point import Point
 
 class DrawActorsAction(Action):
     """
@@ -26,15 +26,21 @@ class DrawActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        score = cast.get_first_actor("scores")
-        food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
-        segments = snake.get_segments()
+        p1_score = cast.get_first_actor("score_player_1")
+        p2_score = cast.get_first_actor("score_player_2")
+        p2_score.set_position(Point(800,1))
+        #food = cast.get_first_actor("foods")
+        p1_bike = cast.get_first_actor("player_1")
+        p2_bike = cast.get_first_actor("player_2")
+        p1_segments = p1_bike.get_segments()
+        p2_segments = p2_bike.get_segments()
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(food)
-        self._video_service.draw_actors(segments)
-        self._video_service.draw_actor(score)
+        #self._video_service.draw_actor(food)
+        self._video_service.draw_actors(p1_segments)
+        self._video_service.draw_actors(p2_segments)
+        self._video_service.draw_actor(p1_score)
+        self._video_service.draw_actor(p2_score)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
