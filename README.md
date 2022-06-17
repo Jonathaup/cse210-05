@@ -1,5 +1,6 @@
 # cse210-04
 ## File structure
+```
 /+game
 ++casting
 ---actor()
@@ -23,23 +24,30 @@
 ---point
 /main
 /constant
+```
 
 ##Functionality assignments
+---
 ###Daniel Parra
+---
 -Everything about adding second player
 
 ###Joseph Perez
+---
 -Handle collitions with screen
 -Stop game
 -Boolean conditions
 
 ###Jonathan Uribe (Team Leader)
+---
 -Handle points
 -Software testing
 
 ###Thomas Villalobos
+---
 -Handle player collitions and himself
 
 ###Gloria Rosado
+---
 -Add control for multiple players
 -Readme
