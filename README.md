@@ -1,5 +1,5 @@
 # cse210-05
-Project Group, week 9 Cycle
+Project Group week 9
 
 # Cycle 
 It is a game where the players try to cut each other off using cycles that leave a trail behind them. 
