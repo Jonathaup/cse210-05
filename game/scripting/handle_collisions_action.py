@@ -40,6 +40,7 @@ class HandleCollisionsAction(Action):
         p1_bike.grow_tail(1)
         p2_bike = cast.get_first_actor("player_2")
         p2_bike.grow_tail(1)
+
         # score = cast.get_first_actor("scores")
         # food = cast.get_first_actor("foods")
         # p1_bike = cast.get_first_actor("player_1")
@@ -58,13 +59,17 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         p1_bike = cast.get_first_actor("player_1")
+        p2_bike = cast.get_first_actor("player_2")
         head = p1_bike.get_segments()[0]
         segments = p1_bike.get_segments()[1:]
-        
+        head2 = p2_bike.get_segments()[0]
+        segments2 = p2_bike.get_segments()[1:]
         for segment in segments:
             if head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
-        
+        for segment2 in segments2:
+            if head2.get_position().equals(segment2.get_position()):
+                self._is_game_over = True
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
         
@@ -73,9 +78,9 @@ class HandleCollisionsAction(Action):
         """
         if self._is_game_over:
             p1_bike = cast.get_first_actor("player_1")
+            p2_bike = cast.get_first_actor("player_2")
             segments = p1_bike.get_segments()
-            food = cast.get_first_actor("foods")
-
+            segments2 = p2_bike.get_segments()
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
@@ -84,7 +89,6 @@ class HandleCollisionsAction(Action):
             message.set_text("Game Over!")
             message.set_position(position)
             cast.add_actor("messages", message)
-
             for segment in segments:
                 segment.set_color(constants.WHITE)
             #food.set_color(constants.WHITE)

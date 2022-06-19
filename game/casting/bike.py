@@ -1,9 +1,7 @@
 import constants
-from game.casting.actor import Actor
+from game.casting.limit import Limit
 from game.shared.point import Point
-
-
-class Bike(Actor):
+class Bike(Limit):
     """
     A long limbless reptile.
     
@@ -43,7 +41,7 @@ class Bike(Actor):
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
             
-            segment = Actor()
+            segment = Limit()
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text("#")
@@ -63,7 +61,7 @@ class Bike(Actor):
             text = "8" if i == 0 else "#"
             color = self._bike_color
             
-            segment = Actor()
+            segment = Limit()
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text(text)
