@@ -30,7 +30,8 @@ def main():
     video_service = VideoService()
 
     script = Script()
-    script.add_action("input", ControlActorsAction(keyboard_service))
+    script.add_action("input", ControlActorsAction(keyboard_service,"player_1",constants.PLAYER_1_CONTROLS))
+    script.add_action("input", ControlActorsAction(keyboard_service,"player_2",constants.PLAYER_2_CONTROLS))
     script.add_action("update", MoveActorsAction())
     script.add_action("update", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
