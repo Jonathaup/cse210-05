@@ -14,3 +14,5 @@ WHITE = Color(255, 255, 255)
 RED = Color(255, 0, 0)
 YELLOW = Color(255, 255, 0)
 GREEN = Color(0, 255, 0)
+PLAYER_1_CONTROLS = ['a','d','w','s']
+PLAYER_2_CONTROLS = ['j','l','i','k']
