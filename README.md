@@ -46,23 +46,23 @@ It is a game where the players try to cut each other off using cycles that leave
 ---
 
 ### Daniel Parra
--Everything about adding second player
+- Everything about adding second player
 
 ### Joseph Perez
--Handle collitions with screen
--Stop game
--Boolean conditions
+- Handle collitions with screen
+- Stop game
+- Boolean conditions
 
 ### Jonathan Uribe (Team Leader)
--Handle points
--Software testing
+- Handle points
+- Software testing
 
 ### Thomas Villalobos
--Handle player collitions and himself
+- Handle player collitions and himself
 
 ### Gloria Rosado
--Add control for multiple players
--Readme
+- Add control for multiple players
+- Readme
 
 ## Programs Required
 * Python 3.10.1
