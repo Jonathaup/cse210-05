@@ -15,7 +15,7 @@ class Bike(Limit):
         self._segments = []
         self._bike_color = color
         self._prepare_body(x_start_position)
-        
+        self._actor = Limit()
 
     def get_segments(self):
         return self._segments
@@ -47,7 +47,6 @@ class Bike(Limit):
             segment.set_text("#")
             segment.set_color(self._bike_color)
             self._segments.append(segment)
-
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
     

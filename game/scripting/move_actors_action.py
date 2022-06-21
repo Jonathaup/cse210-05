@@ -1,5 +1,5 @@
 from game.scripting.action import Action
-
+from game.casting.limit import Limit
 
 class MoveActorsAction(Action):
     """
@@ -17,7 +17,10 @@ class MoveActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         actors = cast.get_all_actors()
-        for actor in actors:
-            actor.move_next()
+        game = cast.get_first_actor("Game")
+        print(game.get_boolean())
+        if game.get_boolean() == True:
+            for actor in actors:
+                actor.move_next()
 
 
