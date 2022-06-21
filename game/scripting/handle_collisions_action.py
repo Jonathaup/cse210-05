@@ -8,8 +8,8 @@ class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of HandleCollisionsAction is to handle the situation when the snake collides
-    with the food, or the snake collides with its segments, or the game is over.
+    The responsibility of HandleCollisionsAction is to handle the situation when the cycles collides
+    with their trail, or the game is over.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -34,7 +34,7 @@ class HandleCollisionsAction(Action):
             game = cast.get_first_actor("Game")
 
     def _handle_food_collision(self, cast):
-        """Updates the score nd moves the food if the snake collides with the food.
+        """Updates the score and grows trail as they move.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -56,7 +56,7 @@ class HandleCollisionsAction(Action):
         #     food.reset()
     
     def _handle_segment_collision(self, cast):
-        """Sets the game over flag if the snake collides with one of its segments.
+        """Sets the game over flag if the cycles collides with one of its segments.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -83,8 +83,9 @@ class HandleCollisionsAction(Action):
                 if head2.get_position().equals(segment.get_position()):
                     self._is_game_over = True
                     score1.add_points(1)
+        
     def _handle_game_over(self, cast):
-        """Shows the 'game over' message and turns the snake and food white if the game is over.
+        """Shows the 'game over' message and turns the cycles white if the game is over.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -105,4 +106,8 @@ class HandleCollisionsAction(Action):
             game.set_boolean(None)
             for segment in segments:
                 segment.set_color(constants.WHITE)
+            for segment in segments2:
+                segment.set_color(constants.WHITE)
+
             #food.set_color(constants.WHITE)
+
