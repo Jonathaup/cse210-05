@@ -24,8 +24,8 @@ def main():
     #cast.add_actor("foods", Food())
     cast.add_actor("player_1", Bike(constants.GREEN,150))
     cast.add_actor("player_2", Bike(constants.RED,750))
-    cast.add_actor("score_player_1", Score())
-    cast.add_actor("score_player_2", Score())
+    cast.add_actor("score_player_1", Score("Player One"))
+    cast.add_actor("score_player_2", Score("Player Two"))
     cast.add_actor("Game", Limit())
    
     # start the game
