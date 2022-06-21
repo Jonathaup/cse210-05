@@ -3,6 +3,9 @@ from game.shared.color import Color
 from game.shared.point import Point
 from game.casting.actor import Actor
 class Limit(Actor):
+    def __init__(self):
+        super().__init__()
+        self._boolean = True
     def move_next(self):
         """Moves the actor to its next position according to its velocity. Will wrap the position 
         from one side of the screen to the other when it reaches the given maximum x and y values.
@@ -24,10 +27,12 @@ class Limit(Actor):
         if x < 10:
             x = 10
         self._position = Point(x, y)
-    def stop(self):
-       x = self._position.get_x()
-       y = self._position.get_y()
-       self._position = Point(x, y)
+   #Sets a boolean to control some part of the game
+    def set_boolean(self, boolean):
+         self._boolean = boolean
+    #Get that boolean status
+    def get_boolean(self):
+        return self._boolean
 
 
         
