@@ -8,7 +8,7 @@ class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of HandleCollisionsAction is to handle the situation when the cycles collides
+    The responsibility of HandleCollisionsAction is to handle the situation when the cycles collide
     with their trail, or the game is over.
 
     Attributes:
@@ -28,13 +28,13 @@ class HandleCollisionsAction(Action):
             script (Script): The script of Actions in the game.
         """
         if not self._is_game_over:
-            self._handle_food_collision(cast)
+            self._handle_grow_trail(cast)
             self._handle_segment_collision(cast)
             self._handle_game_over(cast)
             game = cast.get_first_actor("Game")
 
-    def _handle_food_collision(self, cast):
-        """Updates the score and grows trail as they move.
+    def _handle_grow_trail(self, cast):
+        """Grow trails as they move.
         
         Args:
             cast (Cast): The cast of Actors in the game.
