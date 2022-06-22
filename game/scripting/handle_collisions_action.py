@@ -64,12 +64,18 @@ class HandleCollisionsAction(Action):
                     self.is_game_over = True
                     score2.add_points(1)
                     self._message.set_text('Player 2 Wins!\nPress "R" for a New Game')
-                    self._message.set_color(constants.YELLOW)
+                    self._message.set_color(constants.WHITE)
+                    head2.set_color(constants.YELLOW)
+                    for segment in segments2:
+                        segment.set_color(constants.YELLOW)
                 if head2.get_position().equals(segment.get_position()):
                     self.is_game_over = True
                     score1.add_points(1)
+                    head.set_color(constants.YELLOW)
                     self._message.set_text('Player 1 Wins!\nPress "R" for a New Game')
-                    self._message.set_color(constants.YELLOW)
+                    self._message.set_color(constants.WHITE)
+                    for segment in segments:
+                        segment.set_color(constants.YELLOW)
 
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the cycles, display a message.
@@ -90,11 +96,6 @@ class HandleCollisionsAction(Action):
             self._message.set_position(position)
             cast.add_actor("messages", self._message)
             game.set_boolean(None)
-
-            for segment in segments:
-                segment.set_color(constants.WHITE)
-            for segment in segments2:
-                segment.set_color(constants.WHITE)
 
     def set_is_game_over(self):
         """Set the status of the game, if false means the game is running

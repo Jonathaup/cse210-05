@@ -22,8 +22,8 @@ class Limit(Actor):
 
         if x > constants.MAX_X - 10:
             x = constants.MAX_X - 10
-        if y < 20:
-            y = 20
+        if y < 5:
+            y = 5
         if x < 10:
             x = 10
         self._position = Point(x, y)
