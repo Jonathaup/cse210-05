@@ -16,7 +16,7 @@ class Limit(Actor):
         """
         x = (self._position.get_x() + self._velocity.get_x())
         y = (self._position.get_y() + self._velocity.get_y())
-        
+        "Estabishes a border eliminating the wrapping feature"
         if y > constants.MAX_Y - 20:
             y = constants.MAX_Y - 20
 
@@ -27,11 +27,13 @@ class Limit(Actor):
         if x < 10:
             x = 10
         self._position = Point(x, y)
-   #Sets a boolean to control some part of the game
+   
     def set_boolean(self, boolean):
+        #Sets a boolean to control some part of the game
          self._boolean = boolean
-    #Get that boolean status
+   
     def get_boolean(self):
+         #Get that boolean status
         return self._boolean
 
 

@@ -18,7 +18,6 @@ class MoveActorsAction(Action):
         """
         actors = cast.get_all_actors()
         game = cast.get_first_actor("Game")
-        print(game.get_boolean())
         if game.get_boolean() == True:
             for actor in actors:
                 actor.move_next()

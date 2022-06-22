@@ -46,22 +46,31 @@ It is a game where the players try to cut each other off using cycles that leave
 ---
 
 ### Daniel Parra
-- Everything about adding second player
-
-### Joseph Perez
-- Handle collitions with screen
-- Stop game
-- Boolean conditions
+- Everything about adding second player [X]
+- Reset position of the objects [X]
+- Set the direction of the cycle [X]
+- Score Objects [X]
+- Added controls as config file format [X]
+- Class Bike [X]
+- Removed Food Class from the code
+### Joseph Perez 
+josephemilioperezpilier@gmail.com
+- Handle collitions with screen [X]
+- Stop game [X]
+- Boolean conditions [X]
+- Reset Button [X]
+- Class Limit [X]
+- Class twoPlayersControl [X]
 
 ### Jonathan Uribe (Team Leader)
-- Handle points
-- Software testing
+- Handle points [X]
+- Software testing [*]
 
 ### Thomas Villalobos
-- Handle player collitions and himself
+- Handle player collitions and himself [X]
 
 ### Gloria Rosado
-- Add control for multiple players
+- Add control for multiple players [X]
 - Readme
 
 ## Programs Required

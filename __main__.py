@@ -31,7 +31,7 @@ def main():
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
-
+    #Create a new actions for the cycle
     script = Script()
     script.add_action("input", twoPlayerControls(keyboard_service,"player_1",constants.PLAYER_1_CONTROLS))
     script.add_action("input", twoPlayerControls(keyboard_service,"player_2",constants.PLAYER_2_CONTROLS))

@@ -30,10 +30,10 @@ class Bike(Limit):
             previous = self._segments[i - 1]
             velocity = previous.get_velocity()
             trailing.set_velocity(velocity)
-
+    "Ruturn the first part of the cycle"
     def get_head(self):
         return self._segments[0]
-
+    "Grows the tails as it advances"
     def grow_tail(self, number_of_segments):
         for i in range(number_of_segments):
             tail = self._segments[-1]
@@ -47,9 +47,10 @@ class Bike(Limit):
             segment.set_text("#")
             segment.set_color(self._bike_color)
             self._segments.append(segment)
+    "Turns the head and the segments to the chosen direction using player control keys"
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
-    
+    "Prepares the composition of the body"
     def _prepare_body(self,x_start_position):
         x = x_start_position
         y = int(constants.MAX_Y / 2)

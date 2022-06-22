@@ -17,8 +17,8 @@ class HandleCollisionsAction(Action):
 
     def __init__(self):
         """Constructs a new HandleCollisionsAction."""
-        self._is_game_over = False
-
+        self.is_game_over = False
+        self._message = Actor()
 
     def execute(self, cast, script):
         """Executes the handle collisions action.
@@ -27,7 +27,7 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        if not self._is_game_over:
+        if not self.is_game_over:
             self._handle_grow_trail(cast)
             self._handle_segment_collision(cast)
             self._handle_game_over(cast)
@@ -43,17 +43,6 @@ class HandleCollisionsAction(Action):
         p1_bike.grow_tail(1)
         p2_bike = cast.get_first_actor("player_2")
         p2_bike.grow_tail(1)
-
-        # score = cast.get_first_actor("scores")
-        # food = cast.get_first_actor("foods")
-        # p1_bike = cast.get_first_actor("player_1")
-        # head = p1_bike.get_head()
-
-        # if head.get_position().equals(food.get_position()):
-        #     points = food.get_points()
-        #     p1_bike.grow_tail(points)
-        #     score.add_points(points)
-        #     food.reset()
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the cycles collides with one of its segments.
@@ -61,6 +50,7 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
+        #Handdle collision and points
         score1 = cast.get_first_actor("score_player_1")
         score2 = cast.get_first_actor("score_player_2")
         p1_bike = cast.get_first_actor("player_1")
@@ -72,25 +62,21 @@ class HandleCollisionsAction(Action):
         for segmentz in [segments,segments2]:
             for segment in segmentz:
                 if head.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
-                    score2.add_points(1)
-                if head.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
+                    self.is_game_over = True
+                    self._message.set_text("Player 2 Wins!")
                     score2.add_points(1)
                 if head2.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
+                    self.is_game_over = True
                     score1.add_points(1)
-                if head2.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
-                    score1.add_points(1)
-        
+                    self._message.set_text("Player 1 Wins!")
+                    
     def _handle_game_over(self, cast):
-        """Shows the 'game over' message and turns the cycles white if the game is over.
+        """Shows the 'game over' message and turns the cycles, display a message.
         
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        if self._is_game_over:
+        if self.is_game_over:
             game = cast.get_first_actor("Game")
             p1_bike = cast.get_first_actor("player_1")
             p2_bike = cast.get_first_actor("player_2")
@@ -99,15 +85,16 @@ class HandleCollisionsAction(Action):
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
-            message = Actor()
-            message.set_text("Game Over!")
-            message.set_position(position)
-            cast.add_actor("messages", message)
+            
+            self._message.set_position(position)
+            cast.add_actor("messages", self._message)
             game.set_boolean(None)
-            for segment in segments:
-                segment.set_color(constants.WHITE)
-            for segment in segments2:
-                segment.set_color(constants.WHITE)
 
-            #food.set_color(constants.WHITE)
+    def set_is_game_over(self):
+        """Set the status of the game, if false means the game is running
+            if True game is over
+        """
+        self.is_game_over = False
+        self._message.set_text("")
+
 
