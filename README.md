@@ -52,7 +52,8 @@ It is a game where the players try to cut each other off using cycles that leave
 - Score Objects [X]
 - Added controls as config file format [X]
 - Class Bike [X]
-- Removed Food Class from the code
+- Removed Food Class from the code [X]
+
 ### Joseph Perez 
 josephemilioperezpilier@gmail.com
 - Handle collitions with screen [X]
@@ -64,14 +65,16 @@ josephemilioperezpilier@gmail.com
 
 ### Jonathan Uribe (Team Leader)
 - Handle points [X]
-- Software testing [*]
+- Software testing [X]
 
 ### Thomas Villalobos
+vil22003@byui.edu
 - Handle player collitions and himself [X]
+- Software testing [X]
 
 ### Gloria Rosado
 - Add control for multiple players [X]
-- Readme
+- Readme [X]
 
 ## Programs Required
 * Python 3.10.1
