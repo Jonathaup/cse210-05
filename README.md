@@ -46,6 +46,7 @@ It is a game where the players try to cut each other off using cycles that leave
 ---
 
 ### Daniel Parra
+  par21002@byui.edu
 - Everything about adding second player [X]
 - Reset position of the objects [X]
 - Set the direction of the cycle [X]
@@ -55,7 +56,7 @@ It is a game where the players try to cut each other off using cycles that leave
 - Removed Food Class from the code [X]
 
 ### Joseph Perez 
-josephemilioperezpilier@gmail.com
+  josephemilioperezpilier@gmail.com
 - Handle collitions with screen [X]
 - Stop game [X]
 - Boolean conditions [X]
@@ -64,6 +65,7 @@ josephemilioperezpilier@gmail.com
 - Class twoPlayersControl [X]
 
 ### Jonathan Uribe (Team Leader)
+ vil22003@byui.edu
 - Handle points [X]
 - Software testing [X]
 
@@ -73,6 +75,7 @@ vil22003@byui.edu
 - Software testing [X]
 
 ### Gloria Rosado
+ros21035@byu.edu
 - Add control for multiple players [X]
 - Readme [X]
 
